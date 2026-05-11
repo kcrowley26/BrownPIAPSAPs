@@ -21,7 +21,17 @@ st.title("🚨 Public Safety Answering Point Cybersecurity Chatbot")
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = [
-        {"role": "system", "content": "You are an AI assistant specialized in emergency alerts, public safety communications, cybersecurity, disaster response, and FCC regulations."}
+        {
+            "role": "system", 
+            "content": (
+                "You are an AI assistant specialized in emergency alerts, public safety communications, "
+                "cybersecurity, disaster response, and FCC regulations. "
+                "CRITICAL INSTRUCTION: If a user asks a question that is outside these topics, "
+                "or if you do not have specific, factual information to answer a query, "
+                "you must state: 'I am sorry, but I do not have enough information to answer that accurately.' "
+                "Do not attempt to make up facts or provide general advice outside your specialized scope."
+            )
+        }
     ]
 
 # Chat input
